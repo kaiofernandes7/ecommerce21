@@ -1,0 +1,167 @@
+/* Definição de variáveis */
+:root {
+    --cor-principal: #513808;
+    --cor-secundaria: #755828;
+    --cor-terciaria: #634818;
+    --cor-fundo-claro: #f8f9fa;
+    --cor-fundo-escuro: #987847;
+    --cor-texto-claro: #000000;
+    --cor-texto-escuro: #666;
+    --cor-botao-sucesso: #513808;
+    --cor-botao-sucesso-hover: #866837;
+    --cor-botao-remocao: #866837;
+    --cor-botao-remocao-hover: #755828;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--cor-principal);
+    background-color: var(--cor-fundo-claro);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 15px;
+}
+
+/* Cabeçalho */
+.navbar {
+    background-color: var(--cor-fundo-escuro);
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--cor-texto-claro);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--cor-terciaria);
+}
+
+/* Formulário de Pesquisa */
+.form-inline {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alinha à direita */
+}
+
+.form-control {
+    width: 200px; /* Ajuste conforme necessário */
+    border-radius: 25px;
+    border: 1px solid var(--cor-secundaria);
+}
+
+.form-control:focus {
+    border-color: var(--cor-terciaria);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-outline-success {
+    border-radius: 25px;
+    margin-right: 2em; /* Adiciona margem à direita */
+}
+
+/* Banner Promocional */
+.banner {
+    background-image: url('https://via.placeholder.com/1200x400'); /* Ajuste conforme necessário */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    color: var(--cor-texto-claro);
+    text-align: center;
+    position: relative;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner .btn {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+}
+
+.banner .btn:hover {
+    background-color: var(--cor-terciaria);
+}
+
+/* Cards de Produtos */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.card-img-top:hover {
+    opacity: 0.9;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-fundo-escuro);
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .form-control {
+        width: 100%; /* Para telas pequenas, a barra de pesquisa ocupa toda a largura */
+    }
+}
