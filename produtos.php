@@ -38,8 +38,9 @@ $produtos = $stmt->fetchAll();
             </div>
         </div>
 
-        <?php include 'footer.php'; ?>
+        
     </div>
+    <?php include 'footer.php'; ?>
 
     <script src="assets/js/app.js"></script>
 </body>

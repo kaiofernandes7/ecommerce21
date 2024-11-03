@@ -1,165 +1,54 @@
-/* Início do CSS */
-        
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --cor-padrao: #001449;
-            --cor-padrao-hover: #00b4fc;
-            --cor-fonte: #fff;
-            --cor-fonte-p: #555;
-            --cor-btn: #005bc5;
-            --cor-btn-hover: #012677;
-            --cor-fonte-corpo: #555;
-            --cor-fonte-corpo-leve: #777;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: var(--cor-fonte); /* Adicione uma cor de fundo ao menu */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para o menu */
-        }
-        
-        nav {
-            flex: 1;
-            text-align: right;
-        }
-        
-        nav ul {
-            display: inline-block;
-            list-style-type: none;
-        }
-        
-        nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--cor-btn); /* Cor padrão do texto */
-            transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para hover */
-        }
-        
-       
-        
-        .menu-celular {
-            width: 28px;
-            margin-left: 20px;
-            display: none; /* Ocultar por padrão */
-        }
-        
-        /* Responsividade do menu para dispositivos móveis */
-        @media only screen and (max-width: 800px) {
-            nav ul {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--cor-btn-fonte); /* Cor de fundo para o menu móvel */
-                overflow: hidden;
-                display: none; /* Ocultar o menu por padrão */
-            }
-        
-            nav ul.active {
-                display: block; /* Mostrar menu quando ativo */
-            }
-        
-            nav ul li {
-                display: block; /* Exibir itens em bloco */
-                margin: 10px 0; /* Margem entre os itens */
-            }
-        
-            nav ul li a {
-                color: var(--cor-fonte); /* Cor do texto em dispositivos móveis */
-                padding: 15px; /* Espaçamento interno para o link */
-                border-radius: 5px; /* Bordas arredondadas para links */
-                transition: background 0.3s ease; /* Transição suave para o fundo */
-            }
-        
-            nav ul li a:hover {
-                background: var(--cor-padrao); /* Cor de fundo ao passar o mouse */
-                color: var(--cor-fonte); /* Cor do texto ao passar o mouse */
-            }
-        
-            .menu-celular {
-                display: block; /* Mostrar ícone do menu em dispositivos móveis */
-                cursor: pointer; /* Cursor de ponteiro para indicar interatividade */
-            }
-        }
-        
-
-        /* Estilo para a seção "Minha Conta" */
-        .minha-conta {
-            padding: 50px 15%;
-            color: var(--cor-fonte);
-        }
-
-        .minha-conta h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .dados-usuario {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            margin-bottom: 30px;
-        }
-
-        .dados-usuario h3 {
-            color: var(--cor-padrao);
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-
-        .dados-usuario p {
-            font-size: 1.2em;
-            color: var(--cor-fonte-corpo);
-            margin-bottom: 15px;
-        }
-
-        .botoes {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        
-        }
-
-        .btn {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--cor-btn);
-    color: var(--cor-fonte);
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100%; /* Altera para 100% para ocupar toda a largura do contêiner */
-    max-width: 200px; /* Define uma largura máxima opcional para o botão */
-    text-transform: uppercase;
-    font-weight: 500;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.btn:hover {
+:root {
+    --cor-padrao: #001449;
+    --cor-padrao-hover: #00b4fc;
+    --cor-fonte: #fff;
+    --cor-btn: #005bc5;
+    --cor-btn-hover: #012677;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.conta-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.conta-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.conta-info {
+    margin-bottom: 20px;
+}
+
+.conta-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    color: #fff;
+    background-color: var(--cor-btn);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.conta-btn:hover {
     background-color: var(--cor-btn-hover);
-    transform: translateY(-2px);
 }
