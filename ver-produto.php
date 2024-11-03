@@ -1,199 +1,70 @@
+<?php
+require 'conexao2.php'; // Inclua a conexão com o banco de dados
+
+// Verifica se o ID do produto foi passado na URL
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = intval($_GET['id']); // Converte o ID para um número inteiro
+
+    // Consulta para obter os detalhes do produto
+    $sql = "SELECT * FROM produtos WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+
+    $produto = $stmt->fetch(PDO::FETCH_ASSOC); // Obtém os detalhes do produto
+
+    // Verifica se o produto foi encontrado
+    if (!$produto) {
+        header("Location: produtos.php"); // Redireciona se o produto não for encontrado
+        exit();
+    }
+} else {
+    header("Location: produtos.php"); // Redireciona se o ID não for válido
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produtos</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- início banner loja virtual -->
-    <div class="novoMenu"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $produto['nome']; ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <?php include 'header.php'; ?>
 
-    <!-- inicio container -->
     <div class="container">
-       <!-- inicio container -->
-       <div class="container">
-            <!-- Início do Header -->
-            <?php include 'header.php'; ?>
-            <!-- Fim do Header -->
+        <h1><?php echo $produto['nome']; ?></h1>
+        <div class="corpo-categorias ver-produto">
+            <div class="linha">
+                <div class="col-2">
+                    <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>" id="produtoImg" />
+                </div>
 
-    </div>
-    <!-- fim container -->
-    <!-- fim banner loja virtual -->
-
-    <!-- INICIO PRODUTOS DETALHES -->
-    <div class="corpo-categorias ver-produto">
-      <div class="linha">
-        <div class="col-2">
-          <img src="assets/img/galeria-1.jpg" alt="" id="produtoImg" />
-
-          <!-- INICIO LINHA DA GALERIA -->
-          <div class="img-linha">
-            <!-- INICIO ITEM GALERIA -->
-
-            <div class="img-col">
-              <img
-                src="assets/img/galeria-1.jpg"
-                alt=""
-                class="produtoMiniatura"
-                width="100%"
-              />
+                <div class="col-2">
+                    <h4>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></h4>
+                    <form action="" method="post">
+                        <select name="tamanho" id="">
+                            <option value="">Selecione o tamanho</option>
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="XG">XG</option>
+                            <option value="XXG">XXG</option>
+                        </select>
+                        <input type="number" name="quantidade" id="" value="1" min="1" />
+                        <button type="submit" class="btn">Adicionar ao carrinho</button>
+                    </form>
+                    <h3>Descrição</h3>
+                    <p><?php echo $produto['descricao']; ?></p>
+                </div>
             </div>
-            <!-- FIM ITEM GALERIA -->
-
-            <!-- INICIO ITEM GALERIA -->
-
-            <div class="img-col">
-              <img
-                src="assets/img/galeria-2.jpg"
-                alt=""
-                class="produtoMiniatura"
-                width="100%"
-              />
-            </div>
-            <!-- FIM ITEM GALERIA -->
-
-            <!-- INICIO ITEM GALERIA -->
-
-            <div class="img-col">
-              <img
-                src="assets/img/galeria-3.jpg"
-                alt=""
-                class="produtoMiniatura"
-                width="100%"
-              />
-            </div>
-            <!-- FIM ITEM GALERIA -->
-
-            <!-- INICIO ITEM GALERIA -->
-
-            <div class="img-col">
-              <img
-                src="assets/img/galeria-4.jpg"
-                alt=""
-                class="produtoMiniatura"
-                width="100%"
-              />
-            </div>
-            <!-- FIM ITEM GALERIA -->
-          </div>
-          <!-- FIM LINHA DA GALERIA -->
         </div>
-
-        <div class="col-2">
-          <p>Blusa de frio rosa</p>
-          <h1>Compre com desconto</h1>
-          <h4>R$ 777</h4>
-          <form action="" method="post">
-            <select name="" id="">
-              <option value="">Selecione o tamanho</option>
-              <option value="">P</option>
-              <option value="">M</option>
-              <option value="">G</option>
-              <option value="">XG</option>
-              <option value="">XXG</option>
-            </select>
-            <input type="number" name="" id="" value="1" />
-            <button type="submit" class="btn">Adicionar ao carrinho</button>
-          </form>
-          <h3>Descrição</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo
-            molestiae deleniti at et, consectetur aliquid soluta culpa quibusdam
-            harum saepe mollitia nesciunt quis eius repellendus minima provident
-            illum ducimus.
-          </p>
-        </div>
-      </div>
     </div>
-    <!-- FIM PRODUTOS DETALHES -->
-
-    <!-- INICIO TITULO PRODUTOS DETALHES -->
-    <div class="corpo-categorias">
-      <div class="linha linha2">
-        <h2>Produtos relacionados</h2>
-        <p>Veja mais</p>
-      </div>
-    </div>
-    <!-- FIM TITULO PRODUTOS DETALHES -->
-
-    <!-- Inicio produtos em destaque -->
-
-    <div class="corpo-categorias">
-      <!-- inicio linha do corpo categorias -->
-      <div class="linha">
-        <!-- inicio item produtos em destaque -->
-        <div class="col-4">
-          <img src="assets/img/produto-9.jpg" alt="" />
-          <h4>Curso cobranças</h4>
-          <div class="classificacao">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-          </div>
-          <p>R$ 997,90</p>
-        </div>
-        <!-- fim item produtos em destaque -->
-        <!-- inicio item produtos em destaque -->
-        <div class="col-4">
-          <img src="assets/img/produto-10.jpg" alt="" />
-          <h4>Curso cobranças</h4>
-          <div class="classificacao">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-          </div>
-          <p>R$ 997,90</p>
-        </div>
-        <!-- fim item produtos em destaque -->
-        <!-- inicio item produtos em destaque -->
-        <div class="col-4">
-          <img src="assets/img/produto-11.jpg" alt="" />
-          <h4>Curso cobranças</h4>
-          <div class="classificacao">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-          </div>
-          <p>R$ 997,90</p>
-        </div>
-        <!-- fim item produtos em destaque -->
-        <!-- inicio item produtos em destaque -->
-        <div class="col-4">
-          <img src="assets/img/produto-12.jpg" alt="" />
-          <h4>Curso cobranças</h4>
-          <div class="classificacao">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-          </div>
-          <p>R$ 997,90</p>
-        </div>
-        <!-- fim item produtos em destaque -->
-      </div>
-      <!-- fim linha do corpo categorias -->
-    </div>
-    <!-- FIm produtos em destaque -->
 
     <?php include 'footer.php'; ?>
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
     <script src="assets/js/app.js"></script>
-  </body>
+</body>
 </html>
