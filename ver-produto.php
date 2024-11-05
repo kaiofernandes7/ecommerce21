@@ -71,9 +71,8 @@ $produto = $stmt->fetch();
             </div>
         </div>
         <!-- FIM PRODUTOS DETALHES -->
-
-        <?php include 'footer.php'; ?>
     </div>
+    <?php include 'footer.php'; ?>
 
     <script src="assets/js/app.js"></script>
 </body>
