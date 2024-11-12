@@ -1,8 +1,8 @@
 <?php
-session_start(); // Iniciar a sessão
-require 'conexao2.php'; // Conexão com o banco de dados
+session_start(); 
+require 'conexao2.php'; 
 
-// Consulta ao banco de dados
+
 $sql = "SELECT id, nome, preco, imagem FROM produtos";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();

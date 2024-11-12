@@ -25,23 +25,23 @@ class Usuario
     {
         global $pdo;
 
-        // Verifica se o e-mail já está cadastrado
+        
         $sql = "SELECT idusuario FROM usuarios WHERE email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(":email", $email);
         $stmt->execute();
 
         if ($stmt->rowCount() == 0) {
-            // Caso o e-mail não exista, faz o cadastro
+           
             $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":email", $email);
-            $stmt->bindValue(":senha", md5($senha)); // Salva a senha com MD5
+            $stmt->bindValue(":senha", md5($senha)); 
             $stmt->execute();
             return true;
         } else {
-            // Retorna falso caso o e-mail já exista
+            
             return false;
         }
     }

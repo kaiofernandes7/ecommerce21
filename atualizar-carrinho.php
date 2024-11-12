@@ -1,13 +1,13 @@
 <?php
 session_start();
-require 'conexao2.php'; // Inclui o arquivo de conexão com o banco de dados
+require 'conexao2.php'; 
 
 if (isset($_SESSION['idUser'])) {
     if (isset($_POST['idProduto'], $_POST['quantidade'])) {
         $idProduto = $_POST['idProduto'];
         $quantidade = $_POST['quantidade'];
 
-        // Atualiza a quantidade do produto no carrinho
+       
         $sql = "UPDATE carrinho SET quantidade = :quantidade WHERE idusuario = :idusuario AND idproduto = :idproduto";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':quantidade', $quantidade);

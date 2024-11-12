@@ -12,7 +12,7 @@
                     </div>
 
                     <div class="rodape-col-2">
-                        <img src="assets/img/logo-2.png" alt="">
+                        <img src="assets/img/logo-escura.png" alt="">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sunt est rem placeat architecto dolorem, rerum debitis unde, deleniti voluptas quas esse quidem vitae pariatur laudantium fugit quam? Amet, nisi.</p>
                     </div>
 

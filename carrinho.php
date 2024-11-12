@@ -1,27 +1,27 @@
 <?php
-session_start(); // Iniciar a sessão
-require 'conexao2.php'; // Conexão com o banco de dados
+session_start(); 
+require 'conexao2.php'; 
 require_once 'Usuario.class.php';
 
-// Função para remover produto do carrinho
+
 function removerDoCarrinho($id) {
     if (isset($_SESSION['carrinho'])) {
         foreach ($_SESSION['carrinho'] as $key => $item) {
             if ($item['id'] == $id) {
                 unset($_SESSION['carrinho'][$key]);
-                break; // Sai do loop após remover
+                break; 
             }
         }
     }
 }
 
-// Verifica se foi solicitado para remover um produto
+
 if (isset($_GET['remover']) && !empty($_GET['remover'])) {
     $idProduto = intval($_GET['remover']);
     removerDoCarrinho($idProduto);
 }
 
-// Verifica se o carrinho está vazio
+
 $carrinhoVazio = !isset($_SESSION['carrinho']) || empty($_SESSION['carrinho']);
 ?>
 
@@ -45,7 +45,7 @@ $carrinhoVazio = !isset($_SESSION['carrinho']) || empty($_SESSION['carrinho']);
             <table>
                 <thead>
                     <tr>
-                        <th>Imagem</th> <!-- Nova coluna para a imagem -->
+                        <th>Imagem</th> 
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Preço</th>

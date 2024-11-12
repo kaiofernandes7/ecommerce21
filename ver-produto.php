@@ -1,19 +1,19 @@
 <?php
-session_start(); // Iniciar a sessão
-require 'conexao2.php'; // Conexão com o banco de dados
+session_start(); 
+require 'conexao2.php'; 
 require_once 'Usuario.class.php';
 
-// Obtenha o ID do produto a partir da URL
+
 $idProduto = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Consulta ao banco de dados
+
 $sql = "SELECT id, nome, preco, descricao, imagem FROM produtos WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(":id", $idProduto);
 $stmt->execute();
 
 if ($stmt->rowCount() == 0) {
-    // Produto não encontrado
+    
     header("Location: produtos.php");
     exit();
 }
@@ -43,8 +43,7 @@ $produto = $stmt->fetch();
 
                     <!-- INICIO LINHA DA GALERIA -->
                     <div class="img-linha">
-                        <!-- Incluir miniaturas se necessário -->
-                        <!-- Adicione lógica aqui para miniaturas -->
+                        
                     </div>
                     <!-- FIM LINHA DA GALERIA -->
                 </div>

@@ -3,14 +3,14 @@ session_start();
 require 'conexao2.php';
 require 'Usuario.class.php';
 
-$u = new Usuario(); // Instancia a classe Usuario para uso
+$u = new Usuario(); 
 
-// Verifica se o formulário de login foi enviado
+
 if (isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['senEntrar'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Chama a função de login
+   
     if ($u->login($email, $senha)) {
         header("Location: index.php");
         exit;
@@ -19,13 +19,13 @@ if (isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['senEntrar'
     }
 }
 
-// Verifica se o formulário de cadastro foi enviado
+
 if (isset($_POST['sendCad'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Chama a função de cadastro
+   
     if ($u->cadastrar($nome, $email, $senha)) {
         echo "Cadastro realizado com sucesso!";
     } else {
@@ -47,7 +47,7 @@ if (isset($_POST['sendCad'])) {
         <!-- Navegação -->
         <div class="navbar">
             <div class="logo">
-                <a href="index.php"><img src="assets/img/logoEscura.png" alt="" width="125px"></a>
+                <a href="index.php"><img src="assets/img/logo-clara.png" alt="" width="125px"></a>
             </div>
             <nav>
                 <ul id="MenuItens">
@@ -60,7 +60,7 @@ if (isset($_POST['sendCad'])) {
             <img src="assets/img/menu.png" alt="" class="menu-celular" onclick="menucelular()">
         </div>
 
-        <!-- Seção de Login e Cadastro -->
+        
         <div class="minha-conta">
             <div class="formulario">
                 <div class="btn-form">
@@ -68,14 +68,14 @@ if (isset($_POST['sendCad'])) {
                     <span onclick="Cadastro()">Cadastro</span>
                     <hr id="Indicador">
                 </div>
-                <!-- Formulário de Login -->
+               
                 <form action="login.php" method="post" id="EntrarPainel">
                     <input type="email" name="email" placeholder="E-mail de acesso" required>
                     <input type="password" name="senha" placeholder="Digite sua senha" required>
                     <button type="submit" name="senEntrar" class="btn">Entrar</button>
                     <a href="#">Esqueceu sua senha?</a>
                 </form>
-                <!-- Formulário de Cadastro -->
+                
                 <form action="login.php" method="post" id="CadastroSite">
                     <input type="text" name="nome" placeholder="Nome completo" required>
                     <input type="email" name="email" placeholder="E-mail de acesso" required>

@@ -1,7 +1,7 @@
 <!-- inicio navegação -->
 <div class="navbar">
                 <div class="logo">
-                    <a href="index.php"><img src="assets/img/logoEscura.png" alt="" width="125px"></a>
+                    <a href="index.php"><img src="assets/img/logo-clara.png" alt="" width="125px"></a>
                 </div>
 
               <!-- Inicio menu navegação -->
