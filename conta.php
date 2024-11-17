@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'conexao2.php';
-require_once 'Usuario.class.php'; 
+require_once 'Usuario.class.php';
 
 if (!isset($_SESSION['idUser']) || empty($_SESSION['idUser'])) {
     header("Location: login.php");
@@ -27,6 +27,7 @@ if (!$usuario) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +35,13 @@ if (!$usuario) {
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style-conta.css">
 </head>
+
 <body>
-    <?php include 'header.php'; ?>
+
+    <div class="container">
+        <?php include 'header.php'; ?>
+    </div>
+
 
     <div class="conta-container">
         <h1 class="conta-title">Minha Conta</h1>
@@ -54,4 +60,5 @@ if (!$usuario) {
 
     <?php include 'footer.php'; ?>
 </body>
+
 </html>

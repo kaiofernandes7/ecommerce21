@@ -1,6 +1,6 @@
 <?php
 require 'verifica.php';
-require 'conexao2.php';  
+require 'conexao2.php';
 
 if (isset($_SESSION['idUser']) && !empty($_SESSION['idUser'])):
 ?>
