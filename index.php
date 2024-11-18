@@ -36,11 +36,11 @@ endif; ?>
         <div class="linha">
             <div class="col-2">
                 <h1>Escolha um novo <br>estilo de vida</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>A loja do seu estilo.</p>
                 <br><a href="#" class="btn">Mais informações &#8594;</a>
             </div>
             <div class="col-2">
-                <img src="assets/img/banner-1.png" alt="">
+                <img src="assets/img/modelo-banner.webp" alt="">
             </div>
         </div>
         <!-- Fim texto do banner -->
@@ -48,21 +48,24 @@ endif; ?>
     <!-- fim container -->
 
     <!-- Início categorias -->
-    <div class="categorias">
+     <div class="fundo-cat">
+     <div class="categorias">
         <div class="corpo-categorias">
             <div class="linha">
                 <div class="col-3">
-                    <img src="assets/img/categoria-1.jpg" alt="Categoria 1">
+                    <img src="assets/img/cat02.jpg" alt="Categoria 1">
                 </div>
                 <div class="col-3">
-                    <img src="assets/img/categoria-2.jpg" alt="Categoria 2">
+                    <img src="assets/img/cat01.jpeg" alt="Categoria 2">
                 </div>
                 <div class="col-3">
-                    <img src="assets/img/categoria-3.jpg" alt="Categoria 3">
+                    <img src="assets/img/cat03.jpg" alt="Categoria 3">
                 </div>
             </div>
         </div>
     </div>
+     </div>
+    
     <!-- fim categorias -->
 
     <!-- Inicio produtos em destaque -->
@@ -152,7 +155,7 @@ endif; ?>
                 <!-- inicio item depoimentos -->
                 <div class="col-3">
                     <ion-icon name="ribbon" class="depoimento-icone"></ion-icon>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cumque, dignissimos voluptatem itaque consectetur ad, illum amet vel, ab sed ducimus temporibus doloremque ullam unde hic libero distinctio a quia!</p>
+                    <p>A qualidade das roupas é incrível, sempre com acabamentos impecáveis e tecidos confortáveis. Além disso, o atendimento é super atencioso e a entrega rápida. Sempre saio satisfeito e já virei cliente fiel!</p>
                     <div class="classificacao">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -160,15 +163,15 @@ endif; ?>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                     </div>
-                    <img src="assets/img/cliente-1.png" alt="">
-                    <h3>Kaio Fernandes</h3>
+                    <img src="assets/img/cristiano.webp" alt="">
+                    <h3>Cristiano Ronaldo</h3>
                 </div>
                 <!-- fim item depoimentos -->
 
                 <!-- inicio item depoimentos -->
                 <div class="col-3">
                     <ion-icon name="ribbon" class="depoimento-icone"></ion-icon>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cumque, dignissimos voluptatem itaque consectetur ad, illum amet vel, ab sed ducimus temporibus doloremque ullam unde hic libero distinctio a quia!</p>
+                    <p>Simplesmente apaixonado por essa loja! As roupas são lindas, modernas e de altíssima qualidade. A experiência de compra é excelente, desde o atendimento até a rapidez na entrega. Recomendo de olhos fechados!</p>
                     <div class="classificacao">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -176,15 +179,15 @@ endif; ?>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                     </div>
-                    <img src="assets/img/cliente-2.png" alt="">
-                    <h3>Kaio Fernandes</h3>
+                    <img src="assets/img/kanye.webp" alt="">
+                    <h3>Kanye West</h3>
                 </div>
                 <!-- fim item depoimentos -->
 
                 <!-- inicio item depoimentos -->
                 <div class="col-3">
                     <ion-icon name="ribbon" class="depoimento-icone"></ion-icon>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cumque, dignissimos voluptatem itaque consectetur ad, illum amet vel, ab sed ducimus temporibus doloremque ullam unde hic libero distinctio a quia!</p>
+                    <p>Uma das melhores lojas que já comprei! As peças têm um design único e caem perfeitamente. O cuidado com os detalhes, como a embalagem e o atendimento, fazem toda a diferença. Sempre fico ansioso pelas novidades!</p>
                     <div class="classificacao">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -192,8 +195,8 @@ endif; ?>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                     </div>
-                    <img src="assets/img/cliente-3.png" alt="">
-                    <h3>Kaio Fernandes</h3>
+                    <img src="assets/img/neymar.jpg" alt="">
+                    <h3>Neymar Junior</h3>
                 </div>
                 <!-- fim item depoimentos -->
             </div>
