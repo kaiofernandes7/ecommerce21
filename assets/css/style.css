@@ -67,6 +67,31 @@ nav ul li a{
     color: var(--cor-btn);
 }
 
+.category-form {
+    margin: 0;
+  }
+  
+  .category-select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+    font-size: 1rem;
+    color: var(--cor-btn);
+  }
+  
+  .category-select:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+  }
+  
+  /* Opções no dropdown */
+  .category-select option {
+    font-size: 1rem;
+    color: var(--cor-texto);
+  }
+
+
 .cor-img{
     filter: grayscale(100%);
 }
