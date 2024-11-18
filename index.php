@@ -22,6 +22,7 @@ endif; ?>
 
 <body>
 
+
     <!-- início banner loja virtual -->
     <div class="banner"></div>
 
