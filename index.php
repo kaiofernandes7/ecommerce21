@@ -135,12 +135,12 @@ endif; ?>
         <div class="corpo-categorias">
             <div class="linha">
                 <div class="col-2">
-                    <img src="assets/img/banner-2.png" alt="">
+                    <img src="assets/img/oferta02.png" alt="">
                 </div>
                 <div class="col-2">
                     <p>Produto exclusivo da loja</p>
-                    <h1>Curso exclusivo</h1>
-                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptatibus distinctio dolor deserunt, culpa cumque odit quo nam. Voluptatem reiciendis, temporibus fuga ipsam aliquam voluptate. Aliquid vel ullam excepturi debitis.</small>
+                    <h1>Camisetas com promoções incríveis</h1>
+                    <small>Aproveite nossos preços de blackfriday!</small>
                     <br> <br><a href="" class="btn">Comprar agora &#8594;</a>
                 </div>
             </div>
