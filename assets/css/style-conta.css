@@ -7,11 +7,15 @@
 }
 
 :root {
-    --cor-padrao: #001449;
-    --cor-padrao-hover: #00b4fc;
-    --cor-fonte: #fff;
-    --cor-btn: #005bc5;
-    --cor-btn-hover: #012677;
+    --cor-padrao: #582f0e;
+    --cor-padrao-hover: #370617;
+    --cor-fonte:#fff;
+    --cor-fonte-p:#555;
+    --cor-btn:#7f4f24;
+    --cor-btn-hover:#99582a;
+    --cor-btn-fonte:#000000;
+    --cor-fonte-corpo:#432818;
+    --cor-fonte-corpo-leve:#bb9457;
 }
 
 body {
