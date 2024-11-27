@@ -396,6 +396,52 @@ small{
     filter: grayscale(0%);
 }
 
+/* ----------------Checkout ---------------- */
+/* Garantindo consistência com o resto do site */
+.checkout-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkout-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkout-form .form-group input,
+.checkout-form .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.checkout-form .form-group button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-form .form-group button:hover {
+    background-color: #0056b3;
+}
+
+
 /* ----------------RODAPÉ--------------- */
 
 .rodape{

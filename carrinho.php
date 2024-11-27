@@ -81,7 +81,7 @@ $carrinhoVazio = !isset($_SESSION['carrinho']) || empty($_SESSION['carrinho']);
 
             <div class="acao">
                 <a href="produtos.php" class="btn">Continuar Comprando</a>
-                <a href="finalizar_compra.php" class="btn">Finalizar Compra</a>
+                <a href="checkout.php" class="btn">Finalizar Compra</a>
             </div>
         <?php endif; ?>
     </div>

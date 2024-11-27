@@ -49,7 +49,7 @@ if (!$usuario) {
             <p><strong>Nome:</strong> <?php echo htmlspecialchars($usuario['nome']); ?></p>
             <p><strong>Email:</strong> <?php echo htmlspecialchars($usuario['email']); ?></p>
             <p><strong>Telefone:</strong> <?php echo htmlspecialchars($usuario['telefone']); ?></p>
-            <p><strong>Endereço:</strong> <?php echo htmlspecialchars($usuario['endereco']); ?></p>
+            
         </div>
 
         <div class="conta-actions">
